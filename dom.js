@@ -106,12 +106,29 @@
                 lastChild
                 nextSibling
                 previousSibling
+                    element.parentNode;
+                    element.childNodes[2];
             .nodeValue, grabs the value of the node like with text
             again elements with text have text nodes, so we go to the element, access the child node which will be the text node, and grab the value
                 both of these below do the same thing, .innerHTML is just a shorthand for grabbing the firstChild.nodeValue
                 document.getElementById("id01").innerHTML = "Hello World";
                 document.getElementById("id01").firstChild.nodeValue = "Hello World";
-            
+        document.body - returns the body
+        document.documentElement - returns the entire html document including head tag, etc
+        element.nodeName - read only, returns the tag name of the element like h1, or #text for text nodes
+        element.nodeValue, returns the node value, null for elements, for text nodes it's the text itself
+        element.nodeType, read only, returns node type  
+    HTMLCollection object, an array like list of HTML Elements, NOT an Array, but is iterable, no array methods
+        var myCollection = document.getElementsByTagName("p");
+        for (let i = 0; i < myCollection.length; i++) {
+            myCollection[i].style.backgroundColor = "red";
+    NodeList object, array like list of nodes from the document, NOT an Array, iterable,  similar to HTMLCollection
+    Only NodeList can contain text nodes.
+            var myNodelist = document.querySelectorAll("p");
+            for (let i = 0; i < myNodelist.length; i++) {
+                myNodelist[i].style.backgroundColor = "red";
+            }
+        
             
 
 
