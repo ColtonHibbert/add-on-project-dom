@@ -25,6 +25,7 @@
             .innerHTML is a property
         Change HTML properties using object notation
             element.style.property = value;
+            element.src = "./filename.jpg";
         Change HTML properties using setAttribute() method
             element.setAttribute(attributeName, value);
         Use methods, add or delete elements
@@ -68,8 +69,51 @@
             document.links, Returns all <area> and <a> elements that have a href attribute
             document.scripts, Returns all <script> elements
             document.title, Returns the <title> element
-    
-    
+    Event Listeners
+        addEventListener() method,
+        element.addEventListener(event, function, true- for useCapture and is optional, default is false and not needed)
+        element.addEventListener("click", function(){ alert("Hello World!"); });
+            attaches eventHandler and function to run for that handler
+            does not overwrite existing handlers
+            add as many different event types as you want
+            can have two "click" events on same element
+            add event listener to any DOM object like window object
+            other objects like xmlHttpRequest also support events 
+            DOM events don't have the on, like "change" and "click"
+        removeEventListener() to remove, specify the event and the function to remove
+            element.removeEventListener("mousemove", myFunction);
+    Event Bubbling, Event Capturing, the two types of event propagation in the HTML DOM
+        event propagation, a way of defining element order when an event occurs 
+            bubbling, the innermost elements event is handled first and then bubbles up to the parent and so forth
+            capturing, the outermost elements event is handled first and then the inner
+                document.getElementById("myDiv").addEventListener("click", myFunction, true);
+    HTML Nodes,
+        everything in the HTML document is a Node,
+            document, a document node
+            elements, are element nodes
+            text inside an element, are text nodes
+            comments, are comment nodes
+        Nodes are in a node tree
+            terms are
+                root node
+                parent
+                children
+                siblings
+            use node properties to navigate between nodes
+                parentNode
+                childNodes[nodenumber], nodenumber is an array, grabs the child via index
+                firstChild
+                lastChild
+                nextSibling
+                previousSibling
+            .nodeValue, grabs the value of the node like with text
+            again elements with text have text nodes, so we go to the element, access the child node which will be the text node, and grab the value
+                both of these below do the same thing, .innerHTML is just a shorthand for grabbing the firstChild.nodeValue
+                document.getElementById("id01").innerHTML = "Hello World";
+                document.getElementById("id01").firstChild.nodeValue = "Hello World";
+            
+            
+
 
     
 
