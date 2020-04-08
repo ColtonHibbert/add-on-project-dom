@@ -65,10 +65,15 @@
             myObj.cars.car2 = "Mercedes";
         delete a JSON property, use delete keyword and specify
             delete myObj.cars.car2;
+        Use bracket notation if it's an array 
 
-
-    
-     
-
+    JSONP, JSON with Padding
+    uses the <script> tag
+            <script src='filename or url' />
+    does NOT use XMLHttpRequest object
+    lets you load EXTERNAL scripts
+    Requesting a file from another domain can cause problems, due to cross-domain policy.
+    Requesting an external script from another domain does not have this problem.
+    You can dynamically create script tags with JS and add the src as well
 
 */
