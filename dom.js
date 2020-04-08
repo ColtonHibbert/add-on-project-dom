@@ -128,6 +128,9 @@
             for (let i = 0; i < myNodelist.length; i++) {
                 myNodelist[i].style.backgroundColor = "red";
             }
+    Getting a HTMLCollection or NodeList will depend on the browser and which method you use
+    get by, id, classname, tagname, will generally return HTMLCollection
+    querySelector and querySelectorAll will generally return a NodeList 
         
             
 
